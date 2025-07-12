@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Buch extends Model
 {
     use HasFactory;
+
+    public function bewertung()
+    {
+        return $this->hasMany(Bewertung::class);
+    }
 }
