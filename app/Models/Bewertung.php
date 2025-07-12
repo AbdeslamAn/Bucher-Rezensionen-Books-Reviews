@@ -9,4 +9,9 @@ use Illuminate\Database\Eloquent\Model;
 class Bewertung extends Model
 {
     use HasFactory;
+
+    public function buch() 
+    {
+        return $this->belongsTo(Buch::class);
+    }
 }
