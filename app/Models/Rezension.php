@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Bewertung extends Model
+class Rezension extends Model
 {
     use HasFactory;
 
-    public function buch() 
+    public function buch()
     {
         return $this->belongsTo(Buch::class);
     }
