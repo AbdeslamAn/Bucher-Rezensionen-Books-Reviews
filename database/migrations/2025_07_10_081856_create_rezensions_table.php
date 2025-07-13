@@ -14,15 +14,14 @@ return new class extends Migration
         Schema::create('rezensions', function (Blueprint $table) {
             $table->id();
 
-            $table->unsignedBigInteger('buch_id');
+            
 
             $table->text('rezension');
             $table->unsignedTinyInteger('bewertung');
 
             $table->timestamps();
 
-            $table->foreignId('buch_id')->references('id')->on('buchs')
-                ->onDelete('cascade');
+            $table->foreignId('buch_id')->constrained()->onDelete('cascade');
         });
     }
 
