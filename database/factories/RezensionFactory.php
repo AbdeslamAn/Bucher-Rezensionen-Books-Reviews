@@ -39,7 +39,7 @@ class RezensionFactory extends Factory
         });
     }
 
-    public function averege()
+    public function average()
     {
         return $this->state(function (array $attributes)
         {
