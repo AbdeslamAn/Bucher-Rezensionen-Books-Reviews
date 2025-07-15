@@ -20,4 +20,16 @@ class Buch extends Model
     {
         return $query->where('title', 'LIKE', '%' . $title . '%');
     }
+
+    public function scopePopular(Builder $query): Builder
+    {
+        return $query->withCount('rezension')
+            ->orderBy('rezension_count', 'desc');
+    }
+
+    public function scopeAmBestenBewertet(Builder $query): Builder
+    {
+        return $query->withAvg('rezension', 'bewertung')
+            ->orderBy('rezension_avg_bewertung', 'desc');
+    }
 }
