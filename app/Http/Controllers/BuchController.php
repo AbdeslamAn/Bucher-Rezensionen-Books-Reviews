@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Buch;
 use Illuminate\Http\Request;
 
 class BuchController extends Controller
@@ -9,9 +10,17 @@ class BuchController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $title = $request->input('title');
+
+        $buchs = Buch::when(
+            $title,
+            fn($query, $title) => $query->title($title)
+        )->get();
+
+        return view('buchs.index', ['buchs' => $buchs]);
+
     }
 
     /**
