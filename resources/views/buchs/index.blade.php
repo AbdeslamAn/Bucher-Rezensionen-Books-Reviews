@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1 class="mb-10 text-3xl underline-offset-4">Bücher</h1>
+    <h1 class="mb-10 text-3xl underline-offset-4">Die Bücher</h1>
 
     <form action=""></form>
 
