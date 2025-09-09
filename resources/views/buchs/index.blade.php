@@ -27,7 +27,12 @@
             </div>
             </li>
         @empty
-        
+            <li class="mb-4">
+            <div class="empty-book-item">
+                <p class="empty-text">Keine Bücher gefunden</p>
+                <a href="#" class="reset-link">Kriterien zurücksetzen</a>
+            </div>
+            </li>
 
         @endforelse
     </ul>
