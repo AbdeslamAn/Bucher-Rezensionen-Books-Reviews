@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1 class="mb-10 text-3xl underline-offset-4">Die Bücher</h1>
+    <h1 class="mb-10 text-3xl  underline underline-offset-3">Die Bücher</h1>
 
-    <form method="GET" action="{{ route('buchs.index') }}">
-        <input type="text" name="title" placeholder="Suche nach Titel" class="input"
+    <form method="GET" action="{{ route('buchs.index') }}" class="mb-4 flex items-center space-x-2">
+        <input type="text" name="title" placeholder="Suche nach Titel" class="input h-10"
                value="{{ request('title') }}">
-        <button type="submit" class="btn">Suchen</button>
-        <a href="{{ route('buchs.index') }}">Leeren</a>
+        <button type="submit" class="btn h-10">Suchen</button>
+        <a href="{{ route('buchs.index') }}" class="btn h-10">Leeren</a>
     </form>
 
     <ul>
