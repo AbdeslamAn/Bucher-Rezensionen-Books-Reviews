@@ -6,6 +6,7 @@
     <form method="GET" action="{{ route('buchs.index') }}" class="mb-4 flex items-center space-x-2">
         <input type="text" name="title" placeholder="Suche nach Titel" class="input h-10"
                value="{{ request('title') }}">
+        <input type="hidden" name="filter" value="{{ request('filter') }}">
         <button type="submit" class="btn h-10">Suchen</button>
         <a href="{{ route('buchs.index') }}" class="btn h-10">Leeren</a>
     </form>
@@ -22,7 +23,7 @@
         @endphp
 
         @foreach ($filters as $key => $label)
-            <a href="{{ route('buchs.index', ['filter' => $key]) }}" 
+            <a href="{{ route('buchs.index', ['filter' => $key]) }}"
                 class="{{ request('filter') === $key ? 'filter-item-active' : 'filter-item' }}">
                 {{ $label }}
             </a>
