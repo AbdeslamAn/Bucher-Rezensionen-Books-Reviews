@@ -24,7 +24,7 @@
 
         @foreach ($filters as $key => $label)
             <a href="{{ route('buchs.index', ['filter' => $key]) }}"
-                class="{{ request('filter') === $key ? 'filter-item-active' : 'filter-item' }}">
+                class="{{ request('filter') === $key || (request('filter') === null && $key === '') ? 'filter-item-active' : 'filter-item' }}">
                 {{ $label }}
             </a>
         @endforeach
