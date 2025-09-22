@@ -56,4 +56,11 @@ class Buch extends Model
                 }
         return $query;
     }
+
+    public function scopePopularLetzterMonat(Builder $query)
+    {
+        return $query->popular(now()->subMonth(), now())
+            ->ambestenBewertet(now()->subMonth(), now())
+            ->minRezension(2);
+    }
 }
