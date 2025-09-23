@@ -13,11 +13,24 @@ class BuchController extends Controller
     public function index(Request $request)
     {
         $title = $request->input('title');
+        $filter = $request->input('filter', '');
+
 
         $buchs = Buch::when(
             $title,
             fn($query, $title) => $query->title($title)
-        )->get();
+        );
+
+        $buchs = match ($filter)
+        {
+            'popular_letzter_monat' => $buchs->popularLetzterMonat(),
+            'popular_letzter_6monate' => $buchs->popularLetzter6Monate(),
+            'ambesten_bewertet_letzter_monate' => $buchs->ambestenBewertetLetzterMonat(),
+            'ambesten_bewertet_letzter_6monate' => $buchs->ambestenBewertetLetzter6Monate(),
+            default => $buchs->latest()
+        };
+
+        $buchs = $buchs->get();
 
         return view('buchs.index', ['buchs' => $buchs]);
 
