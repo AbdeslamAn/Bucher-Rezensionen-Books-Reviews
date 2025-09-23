@@ -15,10 +15,10 @@
         @php
             $filters = [
                 '' => 'Neuste',
-                'popular_letzte_monate' => 'Popular letzte Monate',
-                'popular_letzte_6monaten' => 'Popular letzte 6 Monaten',
-                'ambesten_bewertet_letzte_monate' => 'Am besten bewertet letzte Monate',
-                'ambesten_bewertet_letzte_6monate' => 'Am besten bewertet letzte 6 Monaten',
+                'popular_letzter_monat' => 'Popular letzter Monate',
+                'popular_letzter_6monate' => 'Popular letzter 6 Monate',
+                'ambesten_bewertet_letzter_monate' => 'Am besten bewertet im letzten Monate',
+                'ambesten_bewertet_letzter_6monate' => 'Am besten bewertet im letzten 6 Monaten',
             ]
         @endphp
 
