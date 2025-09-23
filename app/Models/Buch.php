@@ -77,4 +77,11 @@ class Buch extends Model
             ->popular(now()->subMonth(), now())
             ->minRezension(2);
     }
+
+    public function scopeambestenBewertetLetzter6Monate(Builder $query)
+    {
+        return $query->ambestenBewertet(now()->subMonths(6), now())
+            ->popular(now()->subMonths(6), now())
+            ->minRezension(5);
+    }
 }
