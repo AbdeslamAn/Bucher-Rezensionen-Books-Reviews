@@ -55,9 +55,9 @@ class BuchController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Buch $buch)
     {
-        //
+        return view('buchs.show', ['buch' => $buch]);
     }
 
     /**
