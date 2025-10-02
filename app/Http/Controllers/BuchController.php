@@ -57,7 +57,13 @@ class BuchController extends Controller
      */
     public function show(Buch $buch)
     {
-        return view('buchs.show', ['buch' => $buch]);
+        return view('buchs.show',
+        [
+                    'buch' => $buch->load([
+                        'rezension' => fn($query) => $query->latest()
+                        ])
+                ]
+        );
     }
 
     /**
