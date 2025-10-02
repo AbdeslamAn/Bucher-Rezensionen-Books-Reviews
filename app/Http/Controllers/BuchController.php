@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Buch;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 
 class BuchController extends Controller
 {
@@ -30,7 +31,12 @@ class BuchController extends Controller
             default => $buchs->latest()
         };
 
-        $buchs = $buchs->get();
+
+
+        $cacheKey = 'buchs:' . $filter . ':' . $title;
+        $buchs = cache()->remembre($cacheKey, 3600, fn() => $buchs->get());
+        //OR
+        // $buchs = cache::remembre($cachkey, 3600, fn() => $buchs->get())
 
         return view('buchs.index', ['buchs' => $buchs]);
 
