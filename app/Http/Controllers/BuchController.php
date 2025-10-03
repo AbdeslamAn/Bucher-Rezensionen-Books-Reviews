@@ -63,13 +63,12 @@ class BuchController extends Controller
      */
     public function show(Buch $buch)
     {
-        return view('buchs.show',
-        [
-                    'buch' => $buch->load([
-                        'rezension' => fn($query) => $query->latest()
-                        ])
-                ]
-        );
+        $cacheKey = 'buch' . $buch->id;
+
+        $buch = cache()->remember($cacheKey, 3600, fn() => $buch->load([
+                'rezension' => fn($query) => $query->latest()]));
+
+        return view('buchs.show', [ 'buch' => $buch ]);
     }
 
     /**
