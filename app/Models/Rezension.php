@@ -20,5 +20,6 @@ class Rezension extends Model
     protected static function booted()
     {
         static::updated(fn(Rezension $rezension) => cache()->forget('buch:' . $rezension->buch_id));
+        static::deleted(fn(Rezension $rezension) => cache()->forget('buch:' . $rezension->buch_id));
     }
 }
