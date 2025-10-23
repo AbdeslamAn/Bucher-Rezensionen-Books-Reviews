@@ -34,7 +34,7 @@ class BuchController extends Controller
 
 
         $cacheKey = 'buchs:' . $filter . ':' . $title;
-        $buchs = cache()->remembre($cacheKey, 3600, fn() => $buchs->get());
+        $buchs = cache()->remember($cacheKey, 3600, fn() => $buchs->get());
         //OR
         // $buchs = cache::remembre($cachkey, 3600, fn() => $buchs->get())
 
