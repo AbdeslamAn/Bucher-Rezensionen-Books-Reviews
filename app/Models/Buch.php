@@ -29,6 +29,13 @@ class Buch extends Model
         ]);
     }
 
+    public function scopeMitAvgBewertung(Builder $query, $from = null, $to = null): Builder
+    {
+        return $query->withAvg([
+            'rezension' => fn(Builder $q) => $this->dateRangeFilter($q, $from, $to)
+        ], 'bewertung');
+    }
+
     public function scopePopular(Builder $query, $from = null, $to = null): Builder
     {
         return $query->mitRezensionCount()
@@ -37,9 +44,7 @@ class Buch extends Model
 
     public function scopeAmBestenBewertet(Builder $query, $from = null, $to = null): Builder
     {
-        return $query->withAvg([
-            'rezension' => fn(Builder $q) => $this->dateRangeFilter($q, $from, $to)
-        ], 'bewertung')
+        return $query->mitAvgBewertung()
             ->orderBy('rezension_avg_bewertung', 'desc');
     }
 
