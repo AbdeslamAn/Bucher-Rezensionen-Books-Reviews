@@ -28,7 +28,7 @@ class BuchController extends Controller
             'popular_letzter_6monate' => $buchs->popularLetzter6Monate(),
             'ambesten_bewertet_letzter_monate' => $buchs->ambestenBewertetLetzterMonat(),
             'ambesten_bewertet_letzter_6monate' => $buchs->ambestenBewertetLetzter6Monate(),
-            default => $buchs->latest()
+            default => $buchs->latest()->mitAvgBewertung()->mitRezensionCount()
         };
 
 
