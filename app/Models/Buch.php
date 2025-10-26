@@ -22,11 +22,16 @@ class Buch extends Model
         return $query->where('title', 'LIKE', '%' . $title . '%');
     }
 
-    public function scopePopular(Builder $query, $from = null, $to = null): Builder
+    public function scopeMitRezensionCount(Builder $query, $from = null, $to = null): Builder
     {
         return $query->withCount([
             'rezension' => fn(Builder $q) => $this->dateRangeFilter($q, $from, $to)
-        ])
+        ]);
+    }
+
+    public function scopePopular(Builder $query, $from = null, $to = null): Builder
+    {
+        return $query->mitRezensionCount()
             ->orderBy('rezension_count', 'desc');
     }
 
