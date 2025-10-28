@@ -37,7 +37,7 @@ class BuchController extends Controller
         $buchs = cache()->remember($cacheKey, 3600, fn() => $buchs->get());
         //OR
         // $buchs = cache::remembre($cachkey, 3600, fn() => $buchs->get())
-
+        $buchs = Buch::paginate(10);
         return view('buchs.index', ['buchs' => $buchs]);
 
     }
