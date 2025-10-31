@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Buch;
+use App\Models\Rezension;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 
@@ -32,12 +33,14 @@ class BuchController extends Controller
         };
 
 
+        $page = $request->input('page', 1);
+        $cacheKey = 'buchs:' . $filter . ':' . $title . ':' . 'page:' . $page;
+        // OR : $cacheKey = "buchs:{$filter}:{$title}:page:{$page}";
 
-        $cacheKey = 'buchs:' . $filter . ':' . $title;
-        $buchs = cache()->remember($cacheKey, 3600, fn() => $buchs->get());
+        $buchs = cache()->remember($cacheKey, 3600, fn() => $buchs->paginate(10));
         //OR
-        // $buchs = cache::remembre($cachkey, 3600, fn() => $buchs->get())
-        $buchs = Buch::paginate(10);
+        // $buchs = cache::remember($cachkey, 3600, fn() => $buchs->get())
+
         return view('buchs.index', ['buchs' => $buchs]);
 
     }
