@@ -63,6 +63,6 @@
         @endforelse
     </ul>
     <div class="mt-6">
-    {{ $buchs->links() }}
+    {{ $buchs->links('pagination::tailwind') }}
     </div>
 @endsection
