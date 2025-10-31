@@ -37,7 +37,7 @@ class BuchController extends Controller
         $cacheKey = 'buchs:' . $filter . ':' . $title . ':' . 'page:' . $page;
         // OR : $cacheKey = "buchs:{$filter}:{$title}:page:{$page}";
 
-        $buchs = cache()->remember($cacheKey, 3600, fn() => $buchs->paginate(10));
+        $buchs = cache()->remember($cacheKey, 3600, fn() => $buchs->paginate(10))->withQueryString();
         //OR
         // $buchs = cache::remember($cachkey, 3600, fn() => $buchs->get())
 
