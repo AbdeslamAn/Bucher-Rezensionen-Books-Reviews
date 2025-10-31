@@ -62,4 +62,7 @@
 
         @endforelse
     </ul>
+    <div class="mt-6">
+    {{ $buchs->links() }}
+    </div>
 @endsection
