@@ -21,6 +21,6 @@ class StarRating extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.start-rating');
+        return view('components.star-rating');
     }
 }
