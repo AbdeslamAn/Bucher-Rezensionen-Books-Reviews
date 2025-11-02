@@ -9,7 +9,7 @@
       <div class="book-rating flex items-center">
         <div class="mr-2 text-sm font-medium text-slate-700 ">
 
-        <x-star-rezension :bewertung="$buch->rezension_avg_bewertung" />
+        <x-star-bewertung :bewertung="$buch->rezension_avg_bewertung" />
         </div>
         <span class="text-center book-review-count  text-sm text-gray-500 ">
           {{ $buch->rezension_count }} {{ Str::plural('rezension', $buch->rezension_count) }}
@@ -26,7 +26,7 @@
           <div>
             <div class="mb-2 flex items-center justify-between">
               <div class="font-semibold">
-                <x-star-rezension :bewertung="$rezension->bewertung" /></div>
+                <x-star-bewertung :bewertung="$rezension->bewertung" /></div>
               <div class="book-review-count">
                 {{ $rezension->created_at->format('M j, Y') }}</div>
             </div>
