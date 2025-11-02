@@ -21,6 +21,6 @@ class StarBewertung extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.star-rezension');
+        return view('components.star-bewertung');
     }
 }
