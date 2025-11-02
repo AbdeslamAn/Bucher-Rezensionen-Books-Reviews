@@ -9,6 +9,7 @@
       <div class="book-rating flex items-center">
         <div class="mr-2 text-sm font-medium text-slate-700 ">
           {{ number_format($buch->rezension_avg_bewertung, 1) }}
+        <x-star-rezension :bewertung="$buch->rezension_avg_bewertung" />
         </div>
         <span class="text-center book-review-count  text-sm text-gray-500 ">
           {{ $buch->rezension_count }} {{ Str::plural('rezension', $buch->rezension_count) }}
