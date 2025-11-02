@@ -8,7 +8,7 @@
       <div class="book-author text-center mb-4 text-lg font-semibold">von {{ $buch->autor }}</div>
       <div class="book-rating flex items-center">
         <div class="mr-2 text-sm font-medium text-slate-700 ">
-          {{ number_format($buch->rezension_avg_bewertung, 1) }}
+
         <x-star-rezension :bewertung="$buch->rezension_avg_bewertung" />
         </div>
         <span class="text-center book-review-count  text-sm text-gray-500 ">
