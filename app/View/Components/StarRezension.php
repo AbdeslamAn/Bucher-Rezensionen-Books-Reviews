@@ -11,7 +11,7 @@ class StarRezension extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct( public readonly int $rezension)
+    public function __construct( public readonly ?float $bewertung)
     {
         //
     }
