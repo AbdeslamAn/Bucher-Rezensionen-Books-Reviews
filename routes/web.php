@@ -7,4 +7,5 @@ Route::get('/', function () {
     return redirect()->route('buchs.index');
 });
 
-Route::resource('buchs', BuchController::class);
+Route::resource('buchs', BuchController::class)
+        ->only(['index', 'show']);
