@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BuchController;
+use App\Http\Controllers\RezensionController;
 
 Route::get('/', function () {
     return redirect()->route('buchs.index');
@@ -9,3 +10,7 @@ Route::get('/', function () {
 
 Route::resource('buchs', BuchController::class)
         ->only(['index', 'show']);
+
+Route::resource('buchs.rezension', RezensionController::class)
+        ->scoped(['rezension' => 'buch'])
+        ->only(['create', 'store']);
