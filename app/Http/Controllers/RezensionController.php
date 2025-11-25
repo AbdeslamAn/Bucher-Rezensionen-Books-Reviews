@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Buch;
 use Illuminate\Http\Request;
 
 class RezensionController extends Controller
@@ -17,9 +18,9 @@ class RezensionController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Buch $buch)
     {
-        //
+        return view('buchs.rezension.create', ['buch' => $buch]);
     }
 
     /**
