@@ -26,9 +26,16 @@ class RezensionController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request, Buch $buch)
     {
-        //
+        $data = $request->validate([
+            'rezension' => 'required|min:15',
+            'bewertung' => 'required|min:1|max:5|integer'
+        ]);
+
+        $buch->rezension()->create($data);
+
+        return redirect()->route('buchs.show', $buch);
     }
 
     /**
