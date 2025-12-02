@@ -20,6 +20,9 @@
 
   <div>
     <h2 class="mb-4 text-xl font-semibold text-center">Rezension</h2>
+    <div class="createbtn w-max float-right">
+    <a href="{{ route('buchs.rezensions.create', $buch) }}" class="rester-link">Rezension erstellen!</a>
+   </div><br><br>
     <ul>
       @forelse ($buch->rezension as $rezension)
         <li class="book-item mb-4">
