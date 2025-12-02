@@ -20,7 +20,7 @@ class RezensionController extends Controller
      */
     public function create(Buch $buch)
     {
-        return view('buchs.rezension.create', ['buch' => $buch]);
+        return view('buchs.rezensions.create', ['buch' => $buch]);
     }
 
     /**
