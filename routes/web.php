@@ -11,6 +11,6 @@ Route::get('/', function () {
 Route::resource('buchs', BuchController::class)
         ->only(['index', 'show']);
 
-Route::resource('buchs.rezension', RezensionController::class)
+Route::resource('buchs.rezensions', RezensionController::class)
         ->scoped(['rezension' => 'buch'])
         ->only(['create', 'store']);
