@@ -20,9 +20,15 @@
 
   <div>
     <h2 class="mb-4 text-xl font-semibold text-center">Rezension</h2>
+    <div>
+    <p class="mb-4 float-left">
+    @if (session('success'))
+        <span class="font-medium text-green-500">{{ session('success') }}</span>
+    @endif
+    </p>
     <div class="createbtn w-max float-right">
     <a href="{{ route('buchs.rezensions.create', $buch) }}" class="rester-link">Rezension erstellen!</a>
-   </div><br><br>
+   </div></div><br><br>
     <ul>
       @forelse ($buch->rezension as $rezension)
         <li class="book-item mb-4">
