@@ -21,5 +21,6 @@ class Rezension extends Model
     {
         static::updated(fn(Rezension $rezension) => cache()->forget('buch:' . $rezension->buch_id));
         static::deleted(fn(Rezension $rezension) => cache()->forget('buch:' . $rezension->buch_id));
+        static::created(fn(Rezension $rezension) => cache()->forget('buch:' . $rezension->buch_id));
     }
 }
