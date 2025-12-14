@@ -35,6 +35,7 @@ class RezensionController extends Controller
 
         $buch->rezension()->create($data);
 
+        session()->flash('success', 'Rezension erfolgreich erstellt');
         return redirect()->route('buchs.show', $buch);
     }
 
