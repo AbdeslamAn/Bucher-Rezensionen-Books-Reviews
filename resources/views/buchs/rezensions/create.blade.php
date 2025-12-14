@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1 class="mb-10 text-2xl">Rezension erstellen für {{ $buch->title }}</h1>
+    <div class=" w-[400px] flex flex-col md:w-full">
+    <h1 class="mb-10 text-2xl flex justify-center ">Rezension erstellen für {{ $buch->title }}</h1>
 
     <form method="POST" action="{{ route('buchs.rezensions.store', $buch) }}">
         @csrf
@@ -17,5 +18,6 @@
             @endfor
         </select>
 
-        <button type="submit" class="btn">Rezension erstellen</button>
+        <button type="submit" class="createbtn">Rezension erstellen</button>
     </form>
+    </div>
