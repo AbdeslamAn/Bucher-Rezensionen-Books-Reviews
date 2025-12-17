@@ -21,11 +21,11 @@
   <div>
     <h2 class="mb-4 text-xl font-semibold text-center">Rezension</h2>
     <div>
-    <p class="mb-4 float-left">
+    <p class="mb-4 flex justify-center">
     @if (session('success'))
         <span class="font-medium text-green-500">{{ session('success') }}</span>
     @endif
-    </p>
+    </p><br>
     <div class="createbtn w-max float-right">
     <a href="{{ route('buchs.rezensions.create', $buch) }}" class="rester-link">Rezension erstellen!</a>
    </div></div><br><br>
