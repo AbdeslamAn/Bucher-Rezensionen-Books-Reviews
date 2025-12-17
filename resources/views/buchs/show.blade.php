@@ -26,9 +26,12 @@
         <span class="font-medium text-green-500">{{ session('success') }}</span>
     @endif
     </p><br>
+
+    <a href="{{ route('buchs.index') }}"
+            class=" group"><span class="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-1000 ">←</span> <span class="link">Zurück zur Rezensionliste</span> </a>
     <div class="createbtn w-max float-right">
     <a href="{{ route('buchs.rezensions.create', $buch) }}" class="rester-link">Rezension erstellen!</a>
-   </div></div><br><br>
+   </div></div><br>
     <ul>
       @forelse ($buch->rezension as $rezension)
         <li class="book-item mb-4">
