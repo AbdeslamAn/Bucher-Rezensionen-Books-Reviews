@@ -19,7 +19,8 @@
             @endfor
         </select>
 
-        <button type="submit" class="createbtn float-left">Rezension erstellen</button>
+        <a href="{{ route('buchs.show', $buch) }}" class="abbrechenbtn float-left">Abbrechen</a>
+        <button type="submit" class="createbtn float-right">Rezension erstellen</button>
     </form>
     </div>
 </center>
