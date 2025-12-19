@@ -31,13 +31,22 @@ class RezensionController extends Controller
         $data = $request->validate([
             'rezension' => 'required|min:15',
             'bewertung' => 'required|min:1|max:5|integer'
-        ]);
+        ],
+        [
+            'rezension.min' => 'Sie müssen mindestens 15 Zeichen schreiben.'
+        ]
+        );
 
         $buch->rezension()->create($data);
+
+
 
         session()->flash('success', 'Rezension erfolgreich erstellt');
         return redirect()->route('buchs.show', $buch);
     }
+    public function messages(){
+
+        }
 
     /**
      * Display the specified resource.
