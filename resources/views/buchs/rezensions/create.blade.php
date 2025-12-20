@@ -8,7 +8,7 @@
     <form method="POST" action="{{ route('buchs.rezensions.store', $buch) }}">
         @csrf
         <div class="mb-4">
-        <label for="rezension" class="block float-left mb-1">Rezension</label>
+        <label for="rezension" class="block text-left mb-1">Rezension</label>
         <textarea name="rezension" id="rezension" required class="input">{{ old('rezension') }}</textarea>
         <div class="min-h-2 mt-1">
            @error('rezension')
