@@ -20,6 +20,6 @@ Route::resource('buchs.rezensions', RezensionController::class)
 
 // limit number of reviews per hour using rate limiting
 // Begrenzung der Anzahl von Rezensionen pro Stunde durch Rate Limiting hinzugefügt
-RateLimiter::for ('rezension', function(Request $request){
+RateLimiter::for ('rezensions', function(Request $request){
     return Limit::perHour(3)->by($request->user()?->id ?: $request->ip());
 });
