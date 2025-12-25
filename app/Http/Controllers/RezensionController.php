@@ -4,9 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Models\Buch;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class RezensionController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('throttle:rezensions')->only('store');
+    }
+
     /**
      * Display a listing of the resource.
      */
