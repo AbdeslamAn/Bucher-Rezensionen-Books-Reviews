@@ -1,61 +1,198 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 📚 Buch Bewertung – Laravel Project
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A web application built with **Laravel** that allows users to view books and add reviews (Rezensionen) with a star rating ⭐.  
+This project was created for learning purposes and focuses on core Laravel concepts.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## ✨ Features
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- Display a list of books
+- View single book details
+- Add reviews (Rezensionen) for books
+- Star rating display using a reusable Blade component
+- Form validation
+- Rate limiting for review submissions
+- Blade + Tailwind CSS user interface
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+---
 
-## Learning Laravel
+## 🧩 Technologies Used
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- **Laravel 12**
+- PHP 8+
+- Blade Templates
+- Eloquent ORM
+- Tailwind CSS
+- Rate Limiting
+- MySQL
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+---
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## ⭐ Star Rating Component
 
-## Laravel Sponsors
+A custom Blade component is used to display ratings visually with stars instead of numbers.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+- Component name: `StarRating`
+- Used in:
+  - Book detail page
+  - Reviews section
 
-### Premium Partners
+---
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+## 🚦 Rate Limiting
 
-## Contributing
+To prevent abuse (e.g. submitting too many reviews):
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+- Maximum **3 reviews per hour**
+- Limiting is based on:
+  - Authenticated user (if available)
+  - Or IP address
 
-## Code of Conduct
+---
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## 🛠️ Installation
 
-## Security Vulnerabilities
+```bash
+git clone <repository-url>
+cd buch-bewertung
+composer install
+cp .env.example .env
+php artisan key:generate
+php artisan migrate
+php artisan serve
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+# 📚 Buch Bewertung – Laravel Projekt
+
+Eine mit **Laravel** entwickelte Webanwendung, mit der Benutzer Bücher anzeigen und Rezensionen mit einer Sternebewertung ⭐ hinzufügen können.  
+Dieses Projekt wurde zu Lernzwecken erstellt und konzentriert sich auf grundlegende Laravel-Konzepte.
+
+---
+
+## ✨ Funktionen
+
+- Anzeige einer Bücherliste
+- Anzeige der Details eines einzelnen Buches
+- Hinzufügen von Rezensionen zu Büchern
+- Sternebewertung über eine wiederverwendbare Blade-Komponente
+- Formularvalidierung
+- Rate Limiting zur Begrenzung der Rezensionen
+- Benutzeroberfläche mit Blade und Tailwind CSS
+
+---
+
+## 🧩 Verwendete Technologien
+
+- Laravel
+- Blade Templates
+- Eloquent ORM
+- Tailwind CSS
+- Rate Limiting
+- Blade Components
+
+---
+
+## ⭐ Star-Rating-Komponente
+
+Eine eigene Blade-Komponente zur visuellen Darstellung von Bewertungen mit Sternen anstelle von Zahlen.
+
+- Komponentenname: `StarRating`
+- Verwendung:
+  - Auf der Buchdetailseite
+  - Im Bereich der Rezensionen
+
+---
+
+## 🚦 Rate Limiting
+
+Zur Vermeidung von Missbrauch (z. B. zu viele Rezensionen in kurzer Zeit):
+
+- Maximal **3 Rezensionen pro Stunde**
+- Begrenzung erfolgt anhand von:
+  - dem eingeloggten Benutzer (falls vorhanden)
+  - oder der IP-Adresse
+
+---
+
+## 🛠️ Installation
+
+```bash
+git clone <repository-url>
+cd buch-bewertung
+composer install
+cp .env.example .env
+php artisan key:generate
+php artisan migrate
+php artisan serve
+
+
+
+
+
+
+# 📚 Buch Bewertung – Projet Laravel
+
+Une application web développée avec **Laravel** permettant aux utilisateurs de consulter des livres et d’ajouter des **avis (recensions)** avec une **évaluation par étoiles ⭐**.  
+Ce projet a été réalisé à des fins pédagogiques, en mettant l’accent sur les concepts fondamentaux de Laravel.
+
+---
+
+## ✨ Fonctionnalités
+
+- Affichage de la liste des livres
+- Affichage des détails d’un livre
+- Ajout de recensions pour chaque livre
+- Système de notation par étoiles via un composant Blade réutilisable
+- Validation des formulaires
+- Limitation du nombre de recensions (Rate Limiting)
+- Interface utilisateur avec Blade et Tailwind CSS
+
+---
+
+## 🧩 Technologies utilisées
+
+- Laravel
+- Blade Templates
+- Eloquent ORM
+- Tailwind CSS
+- Rate Limiting
+- Blade Components
+
+---
+
+## ⭐ Composant Star Rating
+
+Un composant Blade personnalisé permettant d’afficher visuellement les notes sous forme d’étoiles au lieu de valeurs numériques.
+
+- Nom du composant : `StarRating`
+- Utilisé dans :
+  - La page de détails d’un livre
+  - La section des recensions
+
+---
+
+## 🚦 Limitation du taux (Rate Limiting)
+
+Afin d’éviter les abus (par exemple l’ajout massif de recensions) :
+
+- Maximum **3 recensions par heure**
+- La limitation est basée sur :
+  - l’utilisateur authentifié (s’il existe)
+  - ou l’adresse IP
+
+---
+
+## 🛠️ Installation et lancement
+
+```bash
+git clone <repository-url>
+cd buch-bewertung
+composer install
+cp .env.example .env
+php artisan key:generate
+php artisan migrate
+php artisan serve
+
