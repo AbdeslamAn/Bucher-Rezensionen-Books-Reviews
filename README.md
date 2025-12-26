@@ -62,6 +62,7 @@ php artisan key:generate
 php artisan migrate
 php artisan serve
 
+---
 
 
 
@@ -128,9 +129,7 @@ php artisan key:generate
 php artisan migrate
 php artisan serve
 
-
-
-
+---
 
 
 # 📚 Buch Bewertung – Projet Laravel
