@@ -1,4 +1,4 @@
-ِ<center># 📚 Books-Reviews – Laravel Project</center>
+ِ<h1 align="center"># 📚 Books-Reviews – Laravel Project</h1>
 
  ## 🌐 (Available Languages)
 
