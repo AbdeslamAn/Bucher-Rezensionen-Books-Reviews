@@ -1,5 +1,14 @@
-# 📚 Buch Bewertung – Laravel Project
+ِ<center># 📚 Books-Reviews – Laravel Project</center>
 
+ ## 🌐 (Available Languages)
+
+  
+ [English](#-english) | [Deutsch](#-deutsch) | [Français](#-français) <br><br>
+
+
+
+
+## 🇬🇧 English
 A web application built with **Laravel** that allows users to view books and add reviews (Rezensionen) with a star rating ⭐.  
 This project was created for learning purposes and focuses on core Laravel concepts.
 
@@ -52,6 +61,7 @@ To prevent abuse (e.g. submitting too many reviews):
 ---
 
 
+## 🇩🇪 Deutsch
 
 # 📚 Buch Bewertung – Laravel Projekt
 
@@ -106,8 +116,9 @@ Zur Vermeidung von Missbrauch (z. B. zu viele Rezensionen in kurzer Zeit):
 ---
 
 
+## 🇫🇷 Français
 
-# 📚 Buch Bewertung – Projet Laravel
+# 📚 Évaluation de livres – Projet Laravel
 
 Une application web développée avec **Laravel** permettant aux utilisateurs de consulter des livres et d’ajouter des **avis (recensions)** avec une **évaluation par étoiles ⭐**.  
 Ce projet a été réalisé à des fins pédagogiques, en mettant l’accent sur les concepts fondamentaux de Laravel.
