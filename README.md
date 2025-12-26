@@ -51,19 +51,6 @@ To prevent abuse (e.g. submitting too many reviews):
 
 ---
 
-## 🛠️ Installation
-
-```bash
-git clone <repository-url>
-cd buch-bewertung
-composer install
-cp .env.example .env
-php artisan key:generate
-php artisan migrate
-php artisan serve
-
----
-
 
 
 # 📚 Buch Bewertung – Laravel Projekt
@@ -118,18 +105,6 @@ Zur Vermeidung von Missbrauch (z. B. zu viele Rezensionen in kurzer Zeit):
 
 ---
 
-## 🛠️ Installation
-
-```bash
-git clone <repository-url>
-cd buch-bewertung
-composer install
-cp .env.example .env
-php artisan key:generate
-php artisan migrate
-php artisan serve
-
----
 
 
 # 📚 Buch Bewertung – Projet Laravel
@@ -184,7 +159,7 @@ Afin d’éviter les abus (par exemple l’ajout massif de recensions) :
 
 ---
 
-## 🛠️ Installation et lancement
+## 🛠️ Installation
 
 ```bash
 git clone <repository-url>
